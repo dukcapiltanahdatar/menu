@@ -1,0 +1,200 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>TITLE</title>
+		<link rel="icon" type="image/x-icon" href="#" />
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+        <style>
+            /* ### GENERAL SITE STYLES ### */
+
+body {
+  background-color: #231F20;
+  color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+}
+
+#site-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#site-canvas {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; 
+}
+
+.show-nav #site-canvas {
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
+  -webkit-transform: translate3d(100vw, 0, 0);
+  transform: translate3d(100vw, 0, 0);
+}
+
+/* ### MENU STYLES ### */
+
+#site-menu {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  background: #56B2AB;
+  color: #f5f5f5;
+}
+
+.site-menu-content {
+  width: 100%;
+  max-width: 760px;
+  margin: 0px auto;
+  padding: 20px;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+#site-menu i {
+  color: #231F20;
+  font-size: 2em;
+}
+
+#site-menu a {
+  text-decoration: none;
+  color: rgba(35, 31, 32, 0.25);
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+}
+
+#site-menu a:hover {
+  color: #f4f4f4;
+}
+
+h2 {
+  font-size: 80px;
+  text-align: center;
+}
+
+/* ### GENERAL CONTENT STYLES ### */
+
+h1 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 2.25em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(86, 178, 171, 0.5);
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+}
+
+a:hover {
+  color: rgb(86, 178, 171);
+}
+
+.content {
+  width: 90%;
+  max-width: 760px;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+i {
+  font-size: 2em;
+  color: #F5F5F5;
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+}
+
+.nav-icon:hover {
+  color: rgb(86, 178, 171);
+}
+
+/* ### FOOTER ### */
+
+footer {
+   position: fixed;
+   left: 0px;
+   bottom: 0px;
+   height: 30px;
+   width: 100%;
+   background: #231F20;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+footer a {
+  color: rgba(245, 245, 245, 0.5);
+  font-size: 0.75em;
+}
+        </style>
+	</head>
+	<body>
+		<!-- SITE WRAPPER -->
+		<section id="site-wrapper">
+			<!-- CANVAS -->
+			<section id="site-canvas">
+				<!-- MENU -->
+				<section id="site-menu">
+					<section class="site-menu-content">
+						<a href="#" class="toggle-nav"><i class="fa fa-times"></i></a>
+						<a href="#"><h2>NAV 1</h2></a>
+						<a href="#"><h2>NAV 2</h2></a>
+            <a href="#"><h2>NAV 3</h2></a>
+           
+					</section>
+				</section>
+				<!-- CANVAS CONTENT -->
+				<section class="content">
+					<!-- MENU TOGGLE -->
+					<a href="#" class="toggle-nav nav-icon"><i class="fa fa-bars"></i></a>
+					<!-- CONTENT -->
+					<h1>Full Page Off-Canvas Navigation</h1>
+					<p><a href="http://hipsum.co/">Oh. You need a little dummy text for your mockup? How quaint.</a> Locavore yr ugh next level cold-pressed DIY. Wolf Helvetica hella 3 wolf moon. Vice Williamsburg PBR chambray Shoreditch Carles, pop-up typewriter skateboard shabby chic High Life chia meggings. Pork belly lumbersexual cold-pressed sustainable, wayfarers jean shorts street art cornhole literally XOXO meggings kogi Brooklyn. Messenger bag chambray chia, PBR Echo Park pickled meditation shabby chic skateboard bespoke beard gluten-free stumptown try-hard. Brunch iPhone High Life direct trade slow-carb, cornhole raw denim +1 tofu selvage plaid semiotics American Apparel. +1 cray Tumblr Blue Bottle banh mi keffiyeh viral tote bag, farm-to-table banjo Neutra lo-fi.</p>
+					<footer>
+						<p><a href="https://www.twitter.com/calebvaroga">@calebvaroga</a></p>
+					</footer>
+				</section> <!-- END CANVAS CONTENT -->
+			</section> <!-- END SITE CONTENT -->
+		</section> <!-- END WRAPPER -->
+	<!-- ### JQUERY INCLUDE ### -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- ### EDITABLE JS/JQUERY INCLUDE ### -->
+	<script src="js/main.js"></script>
+    <script>
+        $(function() {  
+    // Toggle Nav on Click
+    $('.toggle-nav').click(function() {
+        // Calling a function in case you want to expand upon this.
+        toggleNav();
+    });  
+});
+
+function toggleNav() {
+    if ($('#site-wrapper').hasClass('show-nav')) {
+        // Do things on Nav Close
+        $('#site-wrapper').removeClass('show-nav');
+    } else {
+        // Do things on Nav Open
+        $('#site-wrapper').addClass('show-nav');
+    }
+    //$('#site-wrapper').toggleClass('show-nav');
+}
+    </script>
+	</body>
+</html>
